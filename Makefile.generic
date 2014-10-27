@@ -8,10 +8,10 @@ SHELL = /bin/sh
 # Common prefix 
 PREFIX = /usr/local
 
-# Lua 5.1 config
-LUAINC = $(PREFIX)/include/lua51
+# Lua 5.2 config
+LUAINC = $(PREFIX)/include/lua52
 LUALIB = $(PREFIX)/lib
-LLIB = lua5.1
+LLIB = lua
 
 ## LuaJIT2
 #LUAINC = $(PREFIX)/include/luajit-2.0
@@ -32,7 +32,7 @@ OPTS = -O2
 CFLAGS = $(INCS) $(WARN) $(OPTS) $(DEBUG) $G
 LDFLAGS = $(LIBS) $(OPTS) $(DEBUG)
 
-VPATH = ../$(SRCDIR)
+VPATH = $(SRCDIR)
 
 SOURCES = main.c config.c pool.c buffer.c request.c
 OBJECTS = $(SOURCES:%.c=%.o)
