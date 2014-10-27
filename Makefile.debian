@@ -14,12 +14,12 @@ CONFDIR = /etc/luafcgid
 # Directory in which to put rc.d/initd scripts
 INITDIR = /etc/init.d
 # Directory in which to put Lua modules
-PACKAGEPATH = $(PREFIX)/share/lua/5.1
+PACKAGEPATH = $(PREFIX)/share/lua/5.2
 
-# Lua 5.1 config
-LUAINC = $(PREFIX)/include/lua51
-LUALIB = $(PREFIX)/lib
-LLIB = lua5.1
+# Lua 5.2 config
+LUAINC = $(PREFIX)/local/include
+LUALIB = $(PREFIX)/local/lib
+LLIB = lua
 
 ## LuaJIT2
 #LUAINC = $(PREFIX)/include/luajit-2.0
@@ -40,7 +40,7 @@ OPTS = -O2
 CFLAGS = $(INCS) $(WARN) $(OPTS) $(DEBUG) $G
 LDFLAGS = $(LIBS) $(OPTS) $(DEBUG)
 
-VPATH = ../$(SRCDIR)
+VPATH = $(SRCDIR)
 
 SOURCES = main.c config.c pool.c buffer.c request.c
 OBJECTS = $(SOURCES:%.c=%.o)
