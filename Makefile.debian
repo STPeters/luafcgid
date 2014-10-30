@@ -33,7 +33,7 @@ OBJDIR = obj
 CC = gcc
 WARN = -Wall -pedantic -ansi -std=c89
 INCS = -I$(PREFIX)/include -I$(LUAINC)
-LIBS = -L$(PREFIX)/lib -L$(LUALIB) -lpthread -lfcgi -l$(LLIB) -lm -ldl
+LIBS = -L$(PREFIX)/lib -L$(LUALIB) -lpthread -lfcgi -l$(LLIB) -lm -ldl -Wl,-rpath,/usr/local/lib
 #DEBUG = -ggdb
 OPTS = -O2
 #OPTS = -O3 -march=native
