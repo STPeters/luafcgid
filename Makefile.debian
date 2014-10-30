@@ -49,7 +49,7 @@ EXEC = luafcgid
 all: $(SOURCES) $(EXEC)
 
 $(EXEC): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 
 install: all
 	install -b $(EXEC) $(BINDIR)
