@@ -54,10 +54,10 @@ $(EXEC): $(OBJECTS)
 install: all
 	install -b $(EXEC) $(BINDIR)
 	@mkdir -p $(PACKAGEPATH)
-	install -b ../scripts/luafcgid.lua $(PACKAGEPATH)/luafcgid.lua
+	install -b ./scripts/luafcgid.lua $(PACKAGEPATH)/luafcgid.lua
 	@mkdir -p $(CONFDIR)
-	install -b ../scripts/etc/config.debian.lua $(CONFDIR)/config.lua
-	cd ../docs; $(MAKE) install
+	install -b ./scripts/etc/config.debian.lua $(CONFDIR)/config.lua
+	cd ./docs; $(MAKE) install
 
 clean:
 	rm -f $(OBJECTS) $(EXEC)
@@ -67,4 +67,4 @@ install-daemon: all
 	update-rc.d -f luafcgid defaults
 
 docs:
-	cd ../docs; $(MAKE)
+	cd ./docs; $(MAKE)
