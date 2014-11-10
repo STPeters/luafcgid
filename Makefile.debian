@@ -64,6 +64,7 @@ clean:
 
 install-daemon: all
 	cp -f ./scripts/etc/init.d/luafcgid.debian $(INITDIR)/luafcgid
+	chmod a+x $(INITDIR)/luafcgid
 	update-rc.d -f luafcgid defaults
 
 docs:
